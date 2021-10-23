@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E74D3D5C2719CFE000B45A42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D5B2719CFE000B45A42 /* AppDelegate.swift */; };
+		E74D3D5E2719CFE000B45A42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D5D2719CFE000B45A42 /* SceneDelegate.swift */; };
+		E74D3D602719CFE000B45A42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D5F2719CFE000B45A42 /* ViewController.swift */; };
+		E74D3D652719CFE100B45A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74D3D642719CFE100B45A42 /* Assets.xcassets */; };
+		E74D3D702719D07200B45A42 /* CreationSuite_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D6F2719D07200B45A42 /* CreationSuite_Manager.swift */; };
+		E74D3D732719D0A400B45A42 /* CreationSuite_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D722719D0A400B45A42 /* CreationSuite_Controller.swift */; };
+		E74D3D752719D0D000B45A42 /* RecordingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D742719D0D000B45A42 /* RecordingModule.swift */; };
+		E74D3D782719D12700B45A42 /* CameraAndSession_Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D772719D12700B45A42 /* CameraAndSession_Configuration.swift */; };
+		E74D3D7A2719D13200B45A42 /* CameraAndSession_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D792719D13200B45A42 /* CameraAndSession_Operations.swift */; };
+		E74D3D7C2719D13D00B45A42 /* RecordingModule_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D7B2719D13D00B45A42 /* RecordingModule_Manager.swift */; };
+		E74D3D7E2719D14600B45A42 /* PlaybackModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D7D2719D14600B45A42 /* PlaybackModule.swift */; };
+		E74D3D812719D16F00B45A42 /* PlaybackModule_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D802719D16F00B45A42 /* PlaybackModule_Operations.swift */; };
+		E74D3D832719D17400B45A42 /* PlaybackModule_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D822719D17400B45A42 /* PlaybackModule_Manager.swift */; };
+		E74D3D852719D17E00B45A42 /* EditingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D842719D17E00B45A42 /* EditingOverlay.swift */; };
+		E74D3D882719D19300B45A42 /* EditingOverlay_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D872719D19300B45A42 /* EditingOverlay_Operations.swift */; };
+		E74D3D8A2719D1AE00B45A42 /* EditingOverlay_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D892719D1AE00B45A42 /* EditingOverlay_Manager.swift */; };
+		E74D3D8D2719D1C600B45A42 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D8C2719D1C600B45A42 /* CollectionView.swift */; };
+		E74D3D902719D21000B45A42 /* CollectionView_Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D8F2719D21000B45A42 /* CollectionView_Configuration.swift */; };
+		E74D3D942719D21F00B45A42 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D932719D21F00B45A42 /* Cell.swift */; };
+		E74D3D972719D23A00B45A42 /* Cell_Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D962719D23A00B45A42 /* Cell_Configuration.swift */; };
+		E74D3D992719D24200B45A42 /* Cell_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D982719D24200B45A42 /* Cell_Operations.swift */; };
+		E74D3D9C2719D29500B45A42 /* TrimHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D9B2719D29500B45A42 /* TrimHandle.swift */; };
+		E74D3D9F2719D2BD00B45A42 /* TrimHandle_Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3D9E2719D2BD00B45A42 /* TrimHandle_Configuration.swift */; };
+		E74D3DA12719D2C500B45A42 /* TrimHandle_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3DA02719D2C500B45A42 /* TrimHandle_Operations.swift */; };
+		E74D3DA32719D2F100B45A42 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3DA22719D2F100B45A42 /* DataModel.swift */; };
+		E74D3DA62719D30500B45A42 /* DataModel_Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3DA52719D30500B45A42 /* DataModel_Configuration.swift */; };
+		E74D3DA92719D31700B45A42 /* DMO_CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3DA82719D31700B45A42 /* DMO_CollectionView.swift */; };
+		E74D3DAB2719D32500B45A42 /* DMO_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3DAA2719D32500B45A42 /* DMO_Cell.swift */; };
+		E74D3DAF2719D33400B45A42 /* DMO_Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3DAE2719D33400B45A42 /* DMO_Ingredients.swift */; };
+		E74D3DB6271A03C000B45A42 /* CamerAndSession_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3DB5271A03C000B45A42 /* CamerAndSession_Manager.swift */; };
+		E74D3DB8271A045800B45A42 /* RecordingModule_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3DB7271A045800B45A42 /* RecordingModule_Operations.swift */; };
+		E74D3E3E271A7D7E00B45A42 /* DMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74D3E3D271A7D7E00B45A42 /* DMO.swift */; };
+		E7A2EA78271C70B30048DA0C /* CollectionView_Interactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2EA77271C70B30048DA0C /* CollectionView_Interactions.swift */; };
+		E7A2EA7A271C71FA0048DA0C /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2EA79271C71FA0048DA0C /* TempViewController.swift */; };
+		E7A2EA80271CBA900048DA0C /* PlayheadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2EA7F271CBA900048DA0C /* PlayheadIndicator.swift */; };
+		E7A2EA88271D10B10048DA0C /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E7A2EA86271D10B10048DA0C /* amplifyconfiguration.json */; };
+		E7A2EA89271D10B10048DA0C /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E7A2EA87271D10B10048DA0C /* awsconfiguration.json */; };
+		E7A2EA8C271DD68B0048DA0C /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = E7A2EA8B271DD68B0048DA0C /* Amplify */; };
+		E7A2EA8E271DD68B0048DA0C /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = E7A2EA8D271DD68B0048DA0C /* AWSCognitoAuthPlugin */; };
+		E7A2EA90271DD68B0048DA0C /* AWSS3StoragePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = E7A2EA8F271DD68B0048DA0C /* AWSS3StoragePlugin */; };
+		E7AD8012271E7753002FE201 /* DMO_PlaybackModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD8011271E7753002FE201 /* DMO_PlaybackModule.swift */; };
+		E7B76FDA271F6FA300B686B5 /* CellBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B76FD9271F6FA300B686B5 /* CellBody.swift */; };
+		E7ED3A602723815100E0D7E4 /* IngredientEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3A5F2723815100E0D7E4 /* IngredientEvent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E74D3D582719CFE000B45A42 /* CreationSuite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreationSuite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74D3D5B2719CFE000B45A42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E74D3D5D2719CFE000B45A42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E74D3D5F2719CFE000B45A42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E74D3D642719CFE100B45A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E74D3D692719CFE100B45A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74D3D6F2719D07200B45A42 /* CreationSuite_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSuite_Manager.swift; sourceTree = "<group>"; };
+		E74D3D722719D0A400B45A42 /* CreationSuite_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSuite_Controller.swift; sourceTree = "<group>"; };
+		E74D3D742719D0D000B45A42 /* RecordingModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingModule.swift; sourceTree = "<group>"; };
+		E74D3D772719D12700B45A42 /* CameraAndSession_Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAndSession_Configuration.swift; sourceTree = "<group>"; };
+		E74D3D792719D13200B45A42 /* CameraAndSession_Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAndSession_Operations.swift; sourceTree = "<group>"; };
+		E74D3D7B2719D13D00B45A42 /* RecordingModule_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingModule_Manager.swift; sourceTree = "<group>"; };
+		E74D3D7D2719D14600B45A42 /* PlaybackModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackModule.swift; sourceTree = "<group>"; };
+		E74D3D802719D16F00B45A42 /* PlaybackModule_Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackModule_Operations.swift; sourceTree = "<group>"; };
+		E74D3D822719D17400B45A42 /* PlaybackModule_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackModule_Manager.swift; sourceTree = "<group>"; };
+		E74D3D842719D17E00B45A42 /* EditingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingOverlay.swift; sourceTree = "<group>"; };
+		E74D3D872719D19300B45A42 /* EditingOverlay_Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingOverlay_Operations.swift; sourceTree = "<group>"; };
+		E74D3D892719D1AE00B45A42 /* EditingOverlay_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingOverlay_Manager.swift; sourceTree = "<group>"; };
+		E74D3D8C2719D1C600B45A42 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		E74D3D8F2719D21000B45A42 /* CollectionView_Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView_Configuration.swift; sourceTree = "<group>"; };
+		E74D3D932719D21F00B45A42 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		E74D3D962719D23A00B45A42 /* Cell_Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_Configuration.swift; sourceTree = "<group>"; };
+		E74D3D982719D24200B45A42 /* Cell_Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_Operations.swift; sourceTree = "<group>"; };
+		E74D3D9B2719D29500B45A42 /* TrimHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimHandle.swift; sourceTree = "<group>"; };
+		E74D3D9E2719D2BD00B45A42 /* TrimHandle_Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimHandle_Configuration.swift; sourceTree = "<group>"; };
+		E74D3DA02719D2C500B45A42 /* TrimHandle_Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimHandle_Operations.swift; sourceTree = "<group>"; };
+		E74D3DA22719D2F100B45A42 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		E74D3DA52719D30500B45A42 /* DataModel_Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel_Configuration.swift; sourceTree = "<group>"; };
+		E74D3DA82719D31700B45A42 /* DMO_CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMO_CollectionView.swift; sourceTree = "<group>"; };
+		E74D3DAA2719D32500B45A42 /* DMO_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMO_Cell.swift; sourceTree = "<group>"; };
+		E74D3DAE2719D33400B45A42 /* DMO_Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMO_Ingredients.swift; sourceTree = "<group>"; };
+		E74D3DB5271A03C000B45A42 /* CamerAndSession_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerAndSession_Manager.swift; sourceTree = "<group>"; };
+		E74D3DB7271A045800B45A42 /* RecordingModule_Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingModule_Operations.swift; sourceTree = "<group>"; };
+		E74D3E3D271A7D7E00B45A42 /* DMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMO.swift; sourceTree = "<group>"; };
+		E7A2EA77271C70B30048DA0C /* CollectionView_Interactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView_Interactions.swift; sourceTree = "<group>"; };
+		E7A2EA79271C71FA0048DA0C /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		E7A2EA7F271CBA900048DA0C /* PlayheadIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayheadIndicator.swift; sourceTree = "<group>"; };
+		E7A2EA86271D10B10048DA0C /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		E7A2EA87271D10B10048DA0C /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		E7AD8011271E7753002FE201 /* DMO_PlaybackModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMO_PlaybackModule.swift; sourceTree = "<group>"; };
+		E7B76FD9271F6FA300B686B5 /* CellBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBody.swift; sourceTree = "<group>"; };
+		E7ED3A5F2723815100E0D7E4 /* IngredientEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEvent.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E74D3D552719CFE000B45A42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7A2EA8C271DD68B0048DA0C /* Amplify in Frameworks */,
+				E7A2EA8E271DD68B0048DA0C /* AWSCognitoAuthPlugin in Frameworks */,
+				E7A2EA90271DD68B0048DA0C /* AWSS3StoragePlugin in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E74D3D4F2719CFE000B45A42 = {
+			isa = PBXGroup;
+			children = (
+				E74D3D5A2719CFE000B45A42 /* CreationSuite */,
+				E74D3D592719CFE000B45A42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E74D3D592719CFE000B45A42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D582719CFE000B45A42 /* CreationSuite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E74D3D5A2719CFE000B45A42 /* CreationSuite */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D6F2719D07200B45A42 /* CreationSuite_Manager.swift */,
+				E74D3D722719D0A400B45A42 /* CreationSuite_Controller.swift */,
+				E7A2EA79271C71FA0048DA0C /* TempViewController.swift */,
+				E74D3D712719D07B00B45A42 /* Modules */,
+				E74D3DB02719D34800B45A42 /* AppAssets */,
+			);
+			path = CreationSuite;
+			sourceTree = "<group>";
+		};
+		E74D3D712719D07B00B45A42 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3DA42719D2F600B45A42 /* DataModel */,
+				E74D3D762719D0EC00B45A42 /* RecordingModule */,
+				E74D3D7F2719D14A00B45A42 /* PlaybackModule */,
+				E74D3D862719D18200B45A42 /* EditingOverlay */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E74D3D762719D0EC00B45A42 /* RecordingModule */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D742719D0D000B45A42 /* RecordingModule.swift */,
+				E74D3DB3271A039700B45A42 /* CameraAndSession */,
+				E74D3DB4271A039F00B45A42 /* Recording */,
+			);
+			path = RecordingModule;
+			sourceTree = "<group>";
+		};
+		E74D3D7F2719D14A00B45A42 /* PlaybackModule */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D7D2719D14600B45A42 /* PlaybackModule.swift */,
+				E74D3D802719D16F00B45A42 /* PlaybackModule_Operations.swift */,
+				E74D3D822719D17400B45A42 /* PlaybackModule_Manager.swift */,
+			);
+			path = PlaybackModule;
+			sourceTree = "<group>";
+		};
+		E74D3D862719D18200B45A42 /* EditingOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D842719D17E00B45A42 /* EditingOverlay.swift */,
+				E74D3D872719D19300B45A42 /* EditingOverlay_Operations.swift */,
+				E74D3D892719D1AE00B45A42 /* EditingOverlay_Manager.swift */,
+				E74D3D8E2719D1CC00B45A42 /* EditingOverlay Modules */,
+			);
+			path = EditingOverlay;
+			sourceTree = "<group>";
+		};
+		E74D3D8B2719D1B100B45A42 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D8C2719D1C600B45A42 /* CollectionView.swift */,
+				E74D3D8F2719D21000B45A42 /* CollectionView_Configuration.swift */,
+				E7A2EA77271C70B30048DA0C /* CollectionView_Interactions.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		E74D3D8E2719D1CC00B45A42 /* EditingOverlay Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E7A2EA7F271CBA900048DA0C /* PlayheadIndicator.swift */,
+				E74D3D8B2719D1B100B45A42 /* CollectionView */,
+				E74D3D952719D22D00B45A42 /* Cell */,
+				E74D3D9D2719D29D00B45A42 /* TrimHandle */,
+				E74D3D9A2719D26F00B45A42 /* Ingredients */,
+			);
+			path = "EditingOverlay Modules";
+			sourceTree = "<group>";
+		};
+		E74D3D952719D22D00B45A42 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D932719D21F00B45A42 /* Cell.swift */,
+				E7B76FD9271F6FA300B686B5 /* CellBody.swift */,
+				E74D3D962719D23A00B45A42 /* Cell_Configuration.swift */,
+				E74D3D982719D24200B45A42 /* Cell_Operations.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E74D3D9A2719D26F00B45A42 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				E7ED3A5F2723815100E0D7E4 /* IngredientEvent.swift */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		E74D3D9D2719D29D00B45A42 /* TrimHandle */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D9B2719D29500B45A42 /* TrimHandle.swift */,
+				E74D3D9E2719D2BD00B45A42 /* TrimHandle_Configuration.swift */,
+				E74D3DA02719D2C500B45A42 /* TrimHandle_Operations.swift */,
+			);
+			path = TrimHandle;
+			sourceTree = "<group>";
+		};
+		E74D3DA42719D2F600B45A42 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3DA22719D2F100B45A42 /* DataModel.swift */,
+				E74D3DA52719D30500B45A42 /* DataModel_Configuration.swift */,
+				E74D3DA72719D30900B45A42 /* DataModel Operations */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		E74D3DA72719D30900B45A42 /* DataModel Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3E3D271A7D7E00B45A42 /* DMO.swift */,
+				E7AD8011271E7753002FE201 /* DMO_PlaybackModule.swift */,
+				E74D3DA82719D31700B45A42 /* DMO_CollectionView.swift */,
+				E74D3DAA2719D32500B45A42 /* DMO_Cell.swift */,
+				E74D3DAE2719D33400B45A42 /* DMO_Ingredients.swift */,
+			);
+			path = "DataModel Operations";
+			sourceTree = "<group>";
+		};
+		E74D3DB02719D34800B45A42 /* AppAssets */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D5B2719CFE000B45A42 /* AppDelegate.swift */,
+				E7A2EA86271D10B10048DA0C /* amplifyconfiguration.json */,
+				E7A2EA87271D10B10048DA0C /* awsconfiguration.json */,
+				E74D3D5D2719CFE000B45A42 /* SceneDelegate.swift */,
+				E74D3D5F2719CFE000B45A42 /* ViewController.swift */,
+				E74D3D642719CFE100B45A42 /* Assets.xcassets */,
+				E74D3D692719CFE100B45A42 /* Info.plist */,
+			);
+			path = AppAssets;
+			sourceTree = "<group>";
+		};
+		E74D3DB3271A039700B45A42 /* CameraAndSession */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D772719D12700B45A42 /* CameraAndSession_Configuration.swift */,
+				E74D3D792719D13200B45A42 /* CameraAndSession_Operations.swift */,
+				E74D3DB5271A03C000B45A42 /* CamerAndSession_Manager.swift */,
+			);
+			path = CameraAndSession;
+			sourceTree = "<group>";
+		};
+		E74D3DB4271A039F00B45A42 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				E74D3D7B2719D13D00B45A42 /* RecordingModule_Manager.swift */,
+				E74D3DB7271A045800B45A42 /* RecordingModule_Operations.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E74D3D572719CFE000B45A42 /* CreationSuite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E74D3D6C2719CFE100B45A42 /* Build configuration list for PBXNativeTarget "CreationSuite" */;
+			buildPhases = (
+				E74D3D542719CFE000B45A42 /* Sources */,
+				E74D3D552719CFE000B45A42 /* Frameworks */,
+				E74D3D562719CFE000B45A42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CreationSuite;
+			packageProductDependencies = (
+				E7A2EA8B271DD68B0048DA0C /* Amplify */,
+				E7A2EA8D271DD68B0048DA0C /* AWSCognitoAuthPlugin */,
+				E7A2EA8F271DD68B0048DA0C /* AWSS3StoragePlugin */,
+			);
+			productName = CreationSuite;
+			productReference = E74D3D582719CFE000B45A42 /* CreationSuite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E74D3D502719CFE000B45A42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					E74D3D572719CFE000B45A42 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = E74D3D532719CFE000B45A42 /* Build configuration list for PBXProject "CreationSuite" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E74D3D4F2719CFE000B45A42;
+			packageReferences = (
+				E7A2EA8A271DD68B0048DA0C /* XCRemoteSwiftPackageReference "amplify-ios" */,
+			);
+			productRefGroup = E74D3D592719CFE000B45A42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E74D3D572719CFE000B45A42 /* CreationSuite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E74D3D562719CFE000B45A42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74D3D652719CFE100B45A42 /* Assets.xcassets in Resources */,
+				E7A2EA88271D10B10048DA0C /* amplifyconfiguration.json in Resources */,
+				E7A2EA89271D10B10048DA0C /* awsconfiguration.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E74D3D542719CFE000B45A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74D3D602719CFE000B45A42 /* ViewController.swift in Sources */,
+				E7ED3A602723815100E0D7E4 /* IngredientEvent.swift in Sources */,
+				E74D3D852719D17E00B45A42 /* EditingOverlay.swift in Sources */,
+				E7A2EA78271C70B30048DA0C /* CollectionView_Interactions.swift in Sources */,
+				E74D3D5C2719CFE000B45A42 /* AppDelegate.swift in Sources */,
+				E74D3E3E271A7D7E00B45A42 /* DMO.swift in Sources */,
+				E7A2EA7A271C71FA0048DA0C /* TempViewController.swift in Sources */,
+				E7AD8012271E7753002FE201 /* DMO_PlaybackModule.swift in Sources */,
+				E7B76FDA271F6FA300B686B5 /* CellBody.swift in Sources */,
+				E74D3D8A2719D1AE00B45A42 /* EditingOverlay_Manager.swift in Sources */,
+				E7A2EA80271CBA900048DA0C /* PlayheadIndicator.swift in Sources */,
+				E74D3DA32719D2F100B45A42 /* DataModel.swift in Sources */,
+				E74D3D832719D17400B45A42 /* PlaybackModule_Manager.swift in Sources */,
+				E74D3D7C2719D13D00B45A42 /* RecordingModule_Manager.swift in Sources */,
+				E74D3DB6271A03C000B45A42 /* CamerAndSession_Manager.swift in Sources */,
+				E74D3D972719D23A00B45A42 /* Cell_Configuration.swift in Sources */,
+				E74D3DAB2719D32500B45A42 /* DMO_Cell.swift in Sources */,
+				E74D3D8D2719D1C600B45A42 /* CollectionView.swift in Sources */,
+				E74D3D732719D0A400B45A42 /* CreationSuite_Controller.swift in Sources */,
+				E74D3D752719D0D000B45A42 /* RecordingModule.swift in Sources */,
+				E74D3D5E2719CFE000B45A42 /* SceneDelegate.swift in Sources */,
+				E74D3D812719D16F00B45A42 /* PlaybackModule_Operations.swift in Sources */,
+				E74D3D7A2719D13200B45A42 /* CameraAndSession_Operations.swift in Sources */,
+				E74D3D702719D07200B45A42 /* CreationSuite_Manager.swift in Sources */,
+				E74D3D9C2719D29500B45A42 /* TrimHandle.swift in Sources */,
+				E74D3D7E2719D14600B45A42 /* PlaybackModule.swift in Sources */,
+				E74D3DA92719D31700B45A42 /* DMO_CollectionView.swift in Sources */,
+				E74D3DA12719D2C500B45A42 /* TrimHandle_Operations.swift in Sources */,
+				E74D3DB8271A045800B45A42 /* RecordingModule_Operations.swift in Sources */,
+				E74D3D902719D21000B45A42 /* CollectionView_Configuration.swift in Sources */,
+				E74D3D882719D19300B45A42 /* EditingOverlay_Operations.swift in Sources */,
+				E74D3DA62719D30500B45A42 /* DataModel_Configuration.swift in Sources */,
+				E74D3D782719D12700B45A42 /* CameraAndSession_Configuration.swift in Sources */,
+				E74D3D942719D21F00B45A42 /* Cell.swift in Sources */,
+				E74D3D9F2719D2BD00B45A42 /* TrimHandle_Configuration.swift in Sources */,
+				E74D3DAF2719D33400B45A42 /* DMO_Ingredients.swift in Sources */,
+				E74D3D992719D24200B45A42 /* Cell_Operations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E74D3D6A2719CFE100B45A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E74D3D6B2719CFE100B45A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E74D3D6D2719CFE100B45A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = US383V6K34;
+				INFOPLIST_FILE = "$(SRCROOT)/CreationSuite/AppAssets/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ethan.CreationSuite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E74D3D6E2719CFE100B45A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = US383V6K34;
+				INFOPLIST_FILE = "$(SRCROOT)/CreationSuite/AppAssets/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ethan.CreationSuite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E74D3D532719CFE000B45A42 /* Build configuration list for PBXProject "CreationSuite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74D3D6A2719CFE100B45A42 /* Debug */,
+				E74D3D6B2719CFE100B45A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E74D3D6C2719CFE100B45A42 /* Build configuration list for PBXNativeTarget "CreationSuite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74D3D6D2719CFE100B45A42 /* Debug */,
+				E74D3D6E2719CFE100B45A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E7A2EA8A271DD68B0048DA0C /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E7A2EA8B271DD68B0048DA0C /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7A2EA8A271DD68B0048DA0C /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = Amplify;
+		};
+		E7A2EA8D271DD68B0048DA0C /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7A2EA8A271DD68B0048DA0C /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSCognitoAuthPlugin;
+		};
+		E7A2EA8F271DD68B0048DA0C /* AWSS3StoragePlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7A2EA8A271DD68B0048DA0C /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSS3StoragePlugin;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E74D3D502719CFE000B45A42 /* Project object */;
+}
