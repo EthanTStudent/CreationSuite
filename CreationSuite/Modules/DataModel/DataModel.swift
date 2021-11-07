@@ -32,6 +32,16 @@ class DataModel: NSObject {
     
     var currPlaybackMethod: playbackMethod = .none
     
+    var overlayElementPanning: Bool = false {
+        didSet {
+            if overlayElementPanning == true {
+                operations!.overlayElementIsPlayhead()
+            } else {
+                operations!.overlayElementIsNoLongerPlayhead()
+            }
+        }
+    }
+    
     let tempURLS: [String] = ["60f79e12ba03b900151ed251_6169ba44d173f80016b16037_6169ba44d173f80016b16036_6169ba44d173f80016b16035_0_video_clip_id.mov"
                               
                               
@@ -89,11 +99,13 @@ struct CellModel {
     var unfocusedCellBody: CellBody?
     
     var ingredientModels: [IngredientModel] = []
+    
+    var isRemoved: Bool
 }
 
 struct IngredientModel {
     var ingredientName: String
-    var ingredientQuantity: String
+    var ingredientQuantity: CGFloat
     var unit: String
     
     var percentThroughClip: CGFloat

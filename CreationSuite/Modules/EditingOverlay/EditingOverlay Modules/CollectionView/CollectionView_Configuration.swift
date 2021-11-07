@@ -5,8 +5,13 @@ extension CollectionView {
     // MARK: - CollectionView Configuration
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = dataModel.operations!.getDisplayWidthOfCell(index: indexPath.row)
-        let height = dataModel.operations!.getDisplayHeightOfCell(index: indexPath.row)
+        print("_____")
+        print("THIS IS BEING CALLED")
+        print("indexPath.row: \(indexPath.row)")
+        print(dataModel.operations!.getUnremovedIndexFromAgnosticInt(agnosticIndex: indexPath.row))
+        print("_____")
+        let width = dataModel.operations!.getDisplayWidthOfCell(index: dataModel.operations!.getUnremovedIndexFromAgnosticInt(agnosticIndex: indexPath.row))
+        let height = dataModel.operations!.getDisplayHeightOfCell(index: dataModel.operations!.getUnremovedIndexFromAgnosticInt(agnosticIndex: indexPath.row))
         return CGSize(width: width, height: height)
     }
     

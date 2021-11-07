@@ -3,9 +3,9 @@
 //import AVFoundation
 //
 //class RecordingOperations: NSObject {
-//   
+//
 //    public func toggleRecording(targetRecordingState: String, completion: (_ toggleSuccess: String?, _ toggleError: String?, _ videoClipURI: String?) -> Void) {
-//      
+//
 //      if targetRecordingState == "RECORDING" {
 //        if self.session.canAddOutput(self.output) {
 //          session.beginConfiguration()
@@ -20,7 +20,7 @@
 //        let availableVideoCodecTypes = output.availableVideoCodecTypes
 //        if availableVideoCodecTypes.contains(.hevc){
 //          output.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.hevc], for: connection!)}
-//        
+//
 //        let outputFileName = NSUUID().uuidString
 //        let outputFilePath = (NSTemporaryDirectory() as NSString).appendingPathComponent((outputFileName as NSString).appendingPathExtension("mov")!)
 //        let videoClipURI: URL = URL(fileURLWithPath: outputFilePath)
@@ -35,10 +35,10 @@
 //        completion("SUCCESS", nil, completionURI)
 //      }
 //    }
-//    
+//
 //    public func cleanupFileAtURL(outputURL: URL, completion: (_ success: String, _ error: String?) -> Void) {
 //      print("cleanup checkpoint 2")
-//      
+//
 //      let path = outputURL.path
 //      if FileManager.default.fileExists(atPath: path) {
 //        do {
@@ -46,7 +46,7 @@
 //          if !FileManager.default.fileExists(atPath: path) {
 //            completion("SUCCESS", nil)
 //            print("cleanup checkpoint 3")
-//            
+//
 //          }
 //        } catch {
 //          print("Could not remove file at url: \(outputURL)")
@@ -56,12 +56,12 @@
 //        completion("ERROR", "failed_to_cleanup_file")
 //      }
 //    }
-//    
+//
 //    /// - Tag: DidStartRecording
 //    public func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
 //      print("later check: output recording?", output.isRecording)
 //    }
-//    
+//
 //    /// - Tag: DidFinishRecording
 //    public func fileOutput(_ output: AVCaptureFileOutput,
 //                           didFinishRecordingTo outputFileURL: URL,
@@ -107,13 +107,13 @@
 //        })
 //      }
 //    }
-//    
+//
 //    public func handleVideoUpload(videoUploadKey: String, completion: @escaping (_ success: String, _ error: String?) -> Void) {
-//      
+//
 //      let moviekey = videoUploadKey
 //      let keyComponents = videoUploadKey.components(separatedBy: "_")
 //      let picturekey = "\(keyComponents[0])_\(keyComponents[1])_thumbnail_image.jpeg"
-//      
+//
 //      let thumbnailData = getThumbnail(asset: self.currentAsset!)
 //      guard thumbnailData != nil else {
 //        completion("ERROR", "no thumbnail returned")
@@ -140,8 +140,8 @@
 //        }
 //      }
 //    }
-//    
-//    
+//
+//
 //    public func cleanupAssetAtContinue(completion: @escaping (_ success: String, _ error: String?) -> Void) {
 //      self.cleanupFileAtURL(outputURL: self.currentURL!, completion: {(success, error) in
 //        completion(success,error)
@@ -149,7 +149,7 @@
 //      self.currentAsset = nil
 //      self.currentURL = nil
 //    }
-//    
+//
 //    //  public func handleMergeVideos(urlsArray: NSArray){
 //    //    var URLArray = [URL]()
 //    //    for url in urlsArray {
