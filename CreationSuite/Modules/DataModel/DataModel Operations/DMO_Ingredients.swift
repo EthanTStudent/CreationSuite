@@ -4,17 +4,20 @@ import UIKit
 // DataModel Operations for Ingredients
 extension DataModelOperations {
     
-    func addIngredient() {
-        if model.focusedIngredientIndex == nil {
+    func triggerEventAdd() {
+        if model.focusedIngredientIndex == nil && model.percentageThroughFocused < 1 - model.configuration!.ingredientEventZoneRightSideInSeconds/model.videoClipAttributes[model.focusedIndex].clipLengthInSeconds! {
             pausePlayback()
             
-            let newIngredientModel = IngredientModel(ingredientName: "Temp Ing", ingredientQuantity: "Temp Quant", unit: "Temp Unit", percentThroughClip: model.percentageThroughFocused)
-            model.cellAttributes[model.focusedIndex].ingredientModels.append(newIngredientModel)
-            
-            print("Ingredients in cell \(model.focusedIndex): \(model.cellAttributes[model.focusedIndex].ingredientModels)")
-            
-            model.cellAttributes[model.focusedIndex].collectionViewCell!.addIngredientEvent()
+            model.creationController.displayIngredientsModal(oldIngredient: nil, index: nil)
         }
     }
     
+    func addIngredient() {
+        model.cellAttributes[model.focusedIndex].collectionViewCell!.addIngredientEvent()
+    }
+    
+    func deleteEvent(eventIndexInCell: Int) {
+        print(model.cellAttributes[model.focusedIndex].ingredientModels)
+        model.cellAttributes[model.focusedIndex].collectionViewCell!.deleteIngredientEvent(ingredientIndex: eventIndexInCell)
+    }
 } 

@@ -17,7 +17,7 @@ class EditingOverlay: UIView {
     
     var playPauseButton: UIButton
     var playbackMethodButton: UIButton
-    
+    var deleteClipButton: UIButton
     var addIngredientButton: UIButton
     
     init(controller: CreationSuiteController, dataModel: DataModel, frame: CGRect){
@@ -28,6 +28,7 @@ class EditingOverlay: UIView {
         mySlider = UISlider(frame:CGRect(x: 10, y: 60, width: 300, height: 50))
         playPauseButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         playbackMethodButton = UIButton(frame: CGRect(x: 100, y: 170, width: 100, height: 50))
+        deleteClipButton = UIButton(frame: CGRect(x: 350, y: 170, width: 150, height: 40))
         addIngredientButton = UIButton(frame: CGRect(x: 100, y: 256, width: 150, height: 40))
 
 
@@ -48,6 +49,7 @@ class EditingOverlay: UIView {
         self.addSubview(playhead)
         self.addSubview(playPauseButton)
         self.addSubview(playbackMethodButton)
+        self.addSubview(deleteClipButton)
         self.addSubview(addIngredientButton)
 
         playPauseButton.backgroundColor = .green
@@ -61,32 +63,30 @@ class EditingOverlay: UIView {
         addIngredientButton.backgroundColor = .systemOrange
         addIngredientButton.setTitle("Add Ingredient", for: .normal)
         addIngredientButton.addTarget(self, action: #selector(addIngredientButtonAction), for: .touchUpInside)
-      
-//        self.addSubview(mySlider)
-//        mySlider.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
-//        mySlider.minimumValue = 0.3
-//        mySlider.maximumValue = 2.5
-//        mySlider.isContinuous = true
-//        mySlider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
         
-//        UIView.animate(withDuration: 1) {
-//            self.mySlider.setValue(80.0, animated: true)
-//        }
+        deleteClipButton.backgroundColor = .red
+        deleteClipButton.setTitle("Delete Clip", for: .normal)
+        deleteClipButton.addTarget(self, action: #selector(deleteClipButtonAction), for: .touchUpInside)
+
     }
     
     @objc func playPauseButtonAction(sender: UIButton!) {
-      print("Button tapped")
+      print("PlayPause button tapped")
         model.operations!.switchIsPlaying()
     }
     
     @objc func playbackMethodButtonAction(sender: UIButton!) {
-      print("Button tapped")
+      print("Method button tapped")
         model.operations!.switchPlaybackMethod()
     }
     
     @objc func addIngredientButtonAction(sender: UIButton!) {
-      print("Button tapped")
-        model.operations!.addIngredient() 
+      print("Add button tapped")
+        model.operations!.triggerEventAdd()
+    }
+    
+    @objc func deleteClipButtonAction(sender: UIButton!) {
+        model.operations!.triggerClipDelete()
     }
     
     @objc func sliderValueDidChange(_ sender: UISlider!)

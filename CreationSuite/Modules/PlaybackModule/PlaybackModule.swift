@@ -4,9 +4,10 @@ import AVFoundation
 
 class PlaybackModule: UIView {
     
-    var creationController: CreationSuiteController?
     var model: DataModel?
-    
+    var playerLayer = AVPlayerLayer()
+    var player: AVQueuePlayer
+
     public var currentAsset: AVAsset? {
         didSet {
             if self.currentAsset != nil {
@@ -17,32 +18,35 @@ class PlaybackModule: UIView {
         }
     }
     
-    var player: AVQueuePlayer
-    
-    init(controller: CreationSuiteController, dataModel: DataModel, frame: CGRect) {
+    init(dataModel: DataModel, frame: CGRect) {
+        model = dataModel
         player = AVQueuePlayer()
+        
         super.init(frame: frame)
+
         player.addPeriodicTimeObserver(forInterval: CMTime(value: 1, timescale: 24), queue: DispatchQueue.main, using: {  (progressTime) in
             let seconds = CMTimeGetSeconds(progressTime)
 //            print(seconds)
             let percentage = CGFloat(seconds) / self.model!.videoClipAttributes[self.model!.focusedIndex].clipLengthInSeconds!
             self.model!.operations!.playerTimeHasUpdated(percent: percentage)
         })
-        creationController = controller
-        model = dataModel
-        backgroundColor = .purple
+                        
+        NotificationCenter.default.addObserver(self, selector: #selector(videoDidEnd), name:
+        NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
         
         model!.playbackModule = self
         
-        playerLayer.frame = self.bounds
-        self.layer.addSublayer(playerLayer)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(videoDidEnd), name:
-        NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        backgroundColor = .purple
     }
     
-    var playerLayer = AVPlayerLayer()
-
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if frame != .zero {
+            playerLayer.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+            self.layer.addSublayer(playerLayer)
+        }
+    }
     
     override static var layerClass: AnyClass {
         return AVPlayerLayer.self
@@ -53,24 +57,15 @@ class PlaybackModule: UIView {
     
     func setUpPlayerItem(asset: AVAsset) {
         self.playerItem = AVPlayerItem(asset: asset)
-//        playerItem?.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.old, .new], context: &playerItemContext)
-        
-        
-//        DispatchQueue.main.async {
-            self.playerLayer.player = self.player
-            self.playerLayer.masksToBounds = true
-            self.playerLayer.cornerRadius = 30
-//            self.playerLooper = AVPlayerLooper(player: self.player, templateItem: self.playerItem!)
-            self.player.insert(self.playerItem!, after: nil)
-//        }
+        self.playerLayer.player = self.player
+        self.playerLayer.masksToBounds = true
+        self.playerLayer.cornerRadius = 30
+        self.playerLayer.backgroundColor = CGColor(red: 0, green: 100, blue: 100, alpha: 1)
+        self.player.insert(self.playerItem!, after: nil)
     }
     
     func pausePlayer() {
         self.player.pause()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     deinit {
@@ -80,6 +75,10 @@ class PlaybackModule: UIView {
     @objc func videoDidEnd(notification: NSNotification) {
         print("notifying")
         model!.operations!.reachedEndOfClip()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

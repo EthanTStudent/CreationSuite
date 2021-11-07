@@ -54,7 +54,7 @@ class DataModelConfiguration {
     let scrubBarThumbnailUnfocusedWidth: Int = 46
     let scrubBarThumbnailFocusedWidth: Int = 54
     
-    let minimumClipDurationInSeconds = 5
+//    let minimumClipDurationInSeconds = 5
     
     let ingredientEventZoneRightSideInSeconds: CGFloat = 1.0
     
@@ -70,7 +70,8 @@ class DataModelConfiguration {
                                      collectionViewLeftOfCell: calcLeftOfCell(cellsArr: cells, cellIndex: index),
                                      collectionViewRightOfCell: calcRightOfCell(cellsArr: cells, cellIndex: index, focused: focusedWidth, unfocused: unfocusedWidth),
                                      trimHandleDistanceFromLeftBoundary: 0,
-                                     trimHandleDistanceFromRightBoundary: 0
+                                     trimHandleDistanceFromRightBoundary: 0,
+                                     isRemoved: false
         )
         return newCellModel
     }

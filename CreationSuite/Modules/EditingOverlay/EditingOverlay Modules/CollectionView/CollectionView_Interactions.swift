@@ -53,7 +53,7 @@ extension CollectionView {
     //
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        if !dataModel.isPlaying {
-            if !jumping && !autoScroll {
+            if !jumping && !autoScroll && !dataModel.overlayElementPanning{
                 // pass left trim handle
                 if contentOffset.x < dataModel.operations!.getLeftBoundaryOfTrimHandle(index: dataModel.operations!.getCurrentFocused()) * dataModel.operations!.getDisplayWidthOfCell(index:  dataModel.operations!.getCurrentFocused()) + dataModel.operations!.getLeftBoundaryOfCellObject(index: dataModel.operations!.getCurrentFocused()) && dataModel.operations!.getCurrentFocused() != 0 {
                     jumping = true
@@ -84,7 +84,6 @@ extension CollectionView {
                 }
                 dataModel.operations!.checkIfWithinIngredientZone()
                 dataModel.operations!.offsetDidChange(newOffset: contentOffset.x)
-                print("Ingredient in focus:", dataModel.focusedIngredientIndex)
             }
 //        }
     }

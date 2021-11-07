@@ -16,7 +16,7 @@ class CollectionView: UICollectionView, UICollectionViewDataSource, UICollection
     var autoScroll: Bool = false 
     var jumping: Bool = false
     
-    let collectionViewFrameHeight: CGFloat = 140
+    let collectionViewFrameHeight: CGFloat = 180
     
     init(model: DataModel, yCenter: CGFloat){
         dataModel = model
@@ -30,6 +30,7 @@ class CollectionView: UICollectionView, UICollectionViewDataSource, UICollection
         self.showsHorizontalScrollIndicator = false
         self.translatesAutoresizingMaskIntoConstraints = false
         self.autoresizesSubviews = false
+        layout.minimumLineSpacing = 1000
     
         self.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.identifier)
     

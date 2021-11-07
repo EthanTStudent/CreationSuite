@@ -19,6 +19,9 @@ class DataModelOperations: NSObject {
     init(dataModel: DataModel){
         model = dataModel
     }
+
+    //ugh, this is a crap way to deal with this ...
+    var firstOneThatIsAnError: Int? = nil
     
     func initializeCellArray(videoClipsArr: [VideoClipModel], cells: [CellModel]) -> [CellModel] {
         var newCellArray: [CellModel] = []
@@ -104,5 +107,54 @@ class DataModelOperations: NSObject {
         }
     }
     
+    func overlayElementIsPlayhead() {
+        model.collectionView!.isScrollEnabled = false
+        model.creationController.editingOverlay!.playhead.isHidden = true
+    }
+    
+    func overlayElementIsNoLongerPlayhead() {
+        model.collectionView!.isScrollEnabled = true
+        model.creationController.editingOverlay!.playhead.isHidden = false
+        let secondsThrough = CGFloat(model.playbackModule!.player.currentTime().seconds)
+        let percentThrough = secondsThrough / model.videoClipAttributes[model.focusedIndex].clipLengthInSeconds!
+        model.collectionView!.contentOffset.x = model.operations!.getLeftBoundaryOfCellObject(index: model.focusedIndex) + model.operations!.getDisplayWidthOfCell(index: model.focusedIndex) * percentThrough
+    }
+    
+    func trackTimeToOverlayElement(percent: CGFloat) {
+        model.playbackModule!.player.seek(to: CMTime(value: CMTimeValue(model.videoClipAttributes[model.focusedIndex].clipLengthInSeconds! * percent * 600), timescale: 600), toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
+    }
+    
+    func jumpToIngredient(cell: Int, ingredient: Int) {
+        if cell == model.focusedIndex || cell != model.focusedIndex && model.operations!.cellUpdateDetected(index: cell) == 1 {
+            model.collectionView!.autoScroll = true
+            if cell == model.focusedIndex {
+                for event in model.cellAttributes[model.focusedIndex].collectionViewCell!.ingredientEventsWithinCell {
+                    event.currentState = .focusedCell
+                }
+                model.cellAttributes[model.focusedIndex].collectionViewCell!.ingredientEventsWithinCell[ingredient].currentState = .focusedIcon
+            }
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.0, options: .allowUserInteraction, animations: {
+                self.model.collectionView!.contentOffset = CGPoint(x: self.getLeftBoundaryOfCellObject(index: cell) + self.getDisplayWidthOfCell(index: cell) * self.model.cellAttributes[cell].collectionViewCell!.ingredientEventsWithinCell[ingredient].percentThroughCell, y: 0)
+            }, completion: self.model.collectionView!.animationCompletion)
+        }
+    }
+    
+    func reassignIndices(startingAt: Int) {
+        for i in startingAt..<model.cellAttributes.count {
+            model.cellAttributes[i].indexPath!.row = i
+        }
+    }
+    
+    func getUnremovedIndexFromAgnosticInt(agnosticIndex: Int) -> Int {
+        var index = -1
+        var count = 0
+        while count != agnosticIndex {
+            if !model.cellAttributes[index].isRemoved {
+                count += 1
+            }
+            index += 1
+        }
+        return index
+    }
 }
 

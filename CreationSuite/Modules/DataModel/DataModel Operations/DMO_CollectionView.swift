@@ -31,7 +31,14 @@ extension DataModelOperations {
     }
     
     func getCellCount() -> Int{
-        return model.cellAttributes.count
+        var count = 0
+        for cell in model.cellAttributes {
+            if !cell.isRemoved {
+                count += 1
+            }
+        }
+        print(count)
+        return count
     }
     
     func getCurrentFocused() -> Int{
@@ -116,7 +123,8 @@ extension DataModelOperations {
         model.playbackModule!.player.removeAllItems()
         model.operations!.switchClipPlayback()
         model.operations!.hasReachedEnd = false
-        print("77,", model.operations!.hasReachedEnd)
+        
+        model.operations!.firstOneThatIsAnError = nil //ugh
 //        model.cellAttributes[model.focusedIndex].collectionViewCell!.createCellBody()
         
         return 1
@@ -156,4 +164,18 @@ extension DataModelOperations {
         offsetDidChange(newOffset: newOffset)
     }
     
+    func triggerClipDelete() {
+        pausePlayback()
+        model.creationController.displayDeleteClipModal()
+    }
+    
+    func deleteClip() {
+        print("deleting clip \(model.focusedIndex)")
+        model.cellAttributes[model.focusedIndex].isRemoved = true
+//        model.operations!.reassignIndices(startingAt: model.focusedIndex)
+        model.collectionView!.deleteItems(at: [model.cellAttributes[model.focusedIndex].indexPath!])
+//        redrawCells(resize: true, recenter: true)
+//        model.collectionView!.layout.invalidateLayout()
+    }
 }
+    

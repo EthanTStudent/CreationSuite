@@ -48,7 +48,12 @@
 		E7A2EA8E271DD68B0048DA0C /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = E7A2EA8D271DD68B0048DA0C /* AWSCognitoAuthPlugin */; };
 		E7A2EA90271DD68B0048DA0C /* AWSS3StoragePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = E7A2EA8F271DD68B0048DA0C /* AWSS3StoragePlugin */; };
 		E7AD8012271E7753002FE201 /* DMO_PlaybackModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AD8011271E7753002FE201 /* DMO_PlaybackModule.swift */; };
+		E7B47F10272C3E8A00A80C9A /* IngredientsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B47F0F272C3E8A00A80C9A /* IngredientsModal.swift */; };
 		E7B76FDA271F6FA300B686B5 /* CellBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B76FD9271F6FA300B686B5 /* CellBody.swift */; };
+		E7BD67E4273478F100AAFBBE /* ModeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD67E3273478F100AAFBBE /* ModeSwitch.swift */; };
+		E7BD67E72734796400AAFBBE /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD67E62734796400AAFBBE /* CustomThumbView.swift */; };
+		E7BD67E92734BCA400AAFBBE /* RecordingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD67E82734BCA400AAFBBE /* RecordingButton.swift */; };
+		E7BD67EC2735748E00AAFBBE /* DeleteClipModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD67EB2735748E00AAFBBE /* DeleteClipModal.swift */; };
 		E7ED3A602723815100E0D7E4 /* IngredientEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3A5F2723815100E0D7E4 /* IngredientEvent.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +98,12 @@
 		E7A2EA86271D10B10048DA0C /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		E7A2EA87271D10B10048DA0C /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		E7AD8011271E7753002FE201 /* DMO_PlaybackModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMO_PlaybackModule.swift; sourceTree = "<group>"; };
+		E7B47F0F272C3E8A00A80C9A /* IngredientsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModal.swift; sourceTree = "<group>"; };
 		E7B76FD9271F6FA300B686B5 /* CellBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBody.swift; sourceTree = "<group>"; };
+		E7BD67E3273478F100AAFBBE /* ModeSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSwitch.swift; sourceTree = "<group>"; };
+		E7BD67E62734796400AAFBBE /* CustomThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
+		E7BD67E82734BCA400AAFBBE /* RecordingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingButton.swift; sourceTree = "<group>"; };
+		E7BD67EB2735748E00AAFBBE /* DeleteClipModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteClipModal.swift; sourceTree = "<group>"; };
 		E7ED3A5F2723815100E0D7E4 /* IngredientEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +156,9 @@
 				E74D3D762719D0EC00B45A42 /* RecordingModule */,
 				E74D3D7F2719D14A00B45A42 /* PlaybackModule */,
 				E74D3D862719D18200B45A42 /* EditingOverlay */,
+				E7B47F11272C406500A80C9A /* IngredientsModal */,
+				E7BD67EA2735747900AAFBBE /* DeleteClipModal */,
+				E7BD67E52734795300AAFBBE /* ModeSwitch */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -154,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E74D3D742719D0D000B45A42 /* RecordingModule.swift */,
+				E7BD67E82734BCA400AAFBBE /* RecordingButton.swift */,
 				E74D3DB3271A039700B45A42 /* CameraAndSession */,
 				E74D3DB4271A039F00B45A42 /* Recording */,
 			);
@@ -287,6 +301,31 @@
 			path = Recording;
 			sourceTree = "<group>";
 		};
+		E7B47F11272C406500A80C9A /* IngredientsModal */ = {
+			isa = PBXGroup;
+			children = (
+				E7B47F0F272C3E8A00A80C9A /* IngredientsModal.swift */,
+			);
+			path = IngredientsModal;
+			sourceTree = "<group>";
+		};
+		E7BD67E52734795300AAFBBE /* ModeSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				E7BD67E3273478F100AAFBBE /* ModeSwitch.swift */,
+				E7BD67E62734796400AAFBBE /* CustomThumbView.swift */,
+			);
+			path = ModeSwitch;
+			sourceTree = "<group>";
+		};
+		E7BD67EA2735747900AAFBBE /* DeleteClipModal */ = {
+			isa = PBXGroup;
+			children = (
+				E7BD67EB2735748E00AAFBBE /* DeleteClipModal.swift */,
+			);
+			path = DeleteClipModal;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,6 +410,8 @@
 				E7A2EA78271C70B30048DA0C /* CollectionView_Interactions.swift in Sources */,
 				E74D3D5C2719CFE000B45A42 /* AppDelegate.swift in Sources */,
 				E74D3E3E271A7D7E00B45A42 /* DMO.swift in Sources */,
+				E7B47F10272C3E8A00A80C9A /* IngredientsModal.swift in Sources */,
+				E7BD67E4273478F100AAFBBE /* ModeSwitch.swift in Sources */,
 				E7A2EA7A271C71FA0048DA0C /* TempViewController.swift in Sources */,
 				E7AD8012271E7753002FE201 /* DMO_PlaybackModule.swift in Sources */,
 				E7B76FDA271F6FA300B686B5 /* CellBody.swift in Sources */,
@@ -380,8 +421,10 @@
 				E74D3D832719D17400B45A42 /* PlaybackModule_Manager.swift in Sources */,
 				E74D3D7C2719D13D00B45A42 /* RecordingModule_Manager.swift in Sources */,
 				E74D3DB6271A03C000B45A42 /* CamerAndSession_Manager.swift in Sources */,
+				E7BD67E92734BCA400AAFBBE /* RecordingButton.swift in Sources */,
 				E74D3D972719D23A00B45A42 /* Cell_Configuration.swift in Sources */,
 				E74D3DAB2719D32500B45A42 /* DMO_Cell.swift in Sources */,
+				E7BD67EC2735748E00AAFBBE /* DeleteClipModal.swift in Sources */,
 				E74D3D8D2719D1C600B45A42 /* CollectionView.swift in Sources */,
 				E74D3D732719D0A400B45A42 /* CreationSuite_Controller.swift in Sources */,
 				E74D3D752719D0D000B45A42 /* RecordingModule.swift in Sources */,
@@ -393,6 +436,7 @@
 				E74D3D7E2719D14600B45A42 /* PlaybackModule.swift in Sources */,
 				E74D3DA92719D31700B45A42 /* DMO_CollectionView.swift in Sources */,
 				E74D3DA12719D2C500B45A42 /* TrimHandle_Operations.swift in Sources */,
+				E7BD67E72734796400AAFBBE /* CustomThumbView.swift in Sources */,
 				E74D3DB8271A045800B45A42 /* RecordingModule_Operations.swift in Sources */,
 				E74D3D902719D21000B45A42 /* CollectionView_Configuration.swift in Sources */,
 				E74D3D882719D19300B45A42 /* EditingOverlay_Operations.swift in Sources */,
