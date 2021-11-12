@@ -37,6 +37,8 @@ class CollectionViewCell: UICollectionViewCell {
         addSubview(leftTrimHandle!)
         addSubview(rightTrimHandle!)
         
+        print("I AM BEING CREATED! MY INDEX IS: \(String(describing: cellIndex))")
+        
         
     }
     
@@ -48,17 +50,20 @@ class CollectionViewCell: UICollectionViewCell {
         dataModel = model
         cellIndex = index
         backgroundColor = .clear
-        if focusedCellBody == nil || unfocusedCellBody == nil {
-            focusedCellBody = dataModel!.cellAttributes[cellIndex!].focusedCellBody
-            unfocusedCellBody = dataModel!.cellAttributes[cellIndex!].unfocusedCellBody
-            
-            contentView.addSubview(focusedCellBody!)
-            contentView.addSubview(unfocusedCellBody!)
-            contentView.layer.masksToBounds = true
-            
-            focusedCellBody!.isHidden = true
-            focusedCellBody!.isHidden = true
-        }
+//        if focusedCellBody == nil || unfocusedCellBody == nil {
+//            focusedCellBody = dataModel!.cellAttributes[cellIndex!].focusedCellBody
+//            unfocusedCellBody = dataModel!.cellAttributes[cellIndex!].unfocusedCellBody
+//
+//            contentView.addSubview(focusedCellBody!)
+//            contentView.addSubview(unfocusedCellBody!)
+//            contentView.layer.masksToBounds = true
+//
+//            focusedCellBody!.isHidden = false
+//            unfocusedCellBody!.isHidden = false
+//        }
+        
+        contentView.layer.masksToBounds = true
+
     }
     
     func displayTrimHandles(distanceFromLeftBoundary: CGFloat, distanceFromRightBoundary: CGFloat){

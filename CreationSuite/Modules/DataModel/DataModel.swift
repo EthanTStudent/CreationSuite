@@ -32,6 +32,10 @@ class DataModel: NSObject {
     
     var currPlaybackMethod: playbackMethod = .none
     
+    var activeClipCount: Int = 0
+    
+    var canDelete: Bool = false
+    
     var overlayElementPanning: Bool = false {
         didSet {
             if overlayElementPanning == true {
@@ -42,10 +46,9 @@ class DataModel: NSObject {
         }
     }
     
-    let tempURLS: [String] = ["60f79e12ba03b900151ed251_6169ba44d173f80016b16037_6169ba44d173f80016b16036_6169ba44d173f80016b16035_0_video_clip_id.mov"
+    let tempURLS: [String] = ["test_vid_one.mov", "test_vid_two.mov", "test_vid_one.mov", "test_vid_two.mov", "test_vid_one.mov", "test_vid_two.mov", "test_vid_one.mov", "test_vid_two.mov", "test_vid_one.mov", "test_vid_two.mov", "test_vid_one.mov", "test_vid_two.mov"]
                               
-                              
-                              ,"60f79e12ba03b900151ed251_0e9bfacf_0_video_segment.mov", "60f79e12ba03b900151ed251_45cf625b_3_video_segment.mov"]
+//                              ,"60f79e12ba03b900151ed251_0e9bfacf_0_video_segment.mov", "60f79e12ba03b900151ed251_45cf625b_3_video_segment.mov"]
     
     init(controller: CreationSuiteController) {
         creationController = controller
@@ -64,6 +67,8 @@ class DataModel: NSObject {
             // create thumbnails for every video
             self.operations!.createAllCellBodies()
             
+            self.activeClipCount = self.cellAttributes.count
+            
             self.creationController.videosLoaded()
         }
     }
@@ -76,7 +81,36 @@ struct VideoClipModel {
     var clipLengthInSeconds: CGFloat?
 }
 
+struct HashableCellModel: Hashable {
+    
+//    var collectionViewCell: CollectionViewCell?
+    var indexPath: IndexPath?
+    
+    var collectionViewRawWidthOfCell: CGFloat
+    var collectionViewUnfocusedWidthOfCell: CGFloat
+    var collectionViewFocusedWidthOfCell: CGFloat
+    
+    enum CollectionViewDisplayWidthOfCell {
+        case focused, unfocused
+    }
+    var displayState = CollectionViewDisplayWidthOfCell.unfocused
+    
+    var collectionViewLeftOfCell: CGFloat
+    var collectionViewRightOfCell: CGFloat
+    
+    var trimHandleDistanceFromLeftBoundary: CGFloat
+    var trimHandleDistanceFromRightBoundary: CGFloat
+    
+//    var focusedCellBody: CellBody?
+//    var unfocusedCellBody: CellBody?
+    
+    var ingredientModels: [IngredientModel] = []
+    
+    var isRemoved: Bool
+}
+
 struct CellModel {
+    
     var collectionViewCell: CollectionViewCell?
     var indexPath: IndexPath?
     
@@ -103,7 +137,7 @@ struct CellModel {
     var isRemoved: Bool
 }
 
-struct IngredientModel {
+struct IngredientModel: Hashable {
     var ingredientName: String
     var ingredientQuantity: CGFloat
     var unit: String

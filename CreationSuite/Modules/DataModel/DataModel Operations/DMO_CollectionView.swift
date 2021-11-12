@@ -31,14 +31,7 @@ extension DataModelOperations {
     }
     
     func getCellCount() -> Int{
-        var count = 0
-        for cell in model.cellAttributes {
-            if !cell.isRemoved {
-                count += 1
-            }
-        }
-        print(count)
-        return count
+        return model.activeClipCount
     }
     
     func getCurrentFocused() -> Int{
@@ -166,16 +159,40 @@ extension DataModelOperations {
     
     func triggerClipDelete() {
         pausePlayback()
+        model.canDelete = true
         model.creationController.displayDeleteClipModal()
     }
     
     func deleteClip() {
         print("deleting clip \(model.focusedIndex)")
+                
         model.cellAttributes[model.focusedIndex].isRemoved = true
-//        model.operations!.reassignIndices(startingAt: model.focusedIndex)
-        model.collectionView!.deleteItems(at: [model.cellAttributes[model.focusedIndex].indexPath!])
-//        redrawCells(resize: true, recenter: true)
-//        model.collectionView!.layout.invalidateLayout()
+        model.cellAttributes.append(model.cellAttributes[model.focusedIndex])
+        model.cellAttributes.remove(at: model.focusedIndex)
+        
+        model.videoClipAttributes.append(model.videoClipAttributes[model.focusedIndex])
+        model.videoClipAttributes.remove(at: model.focusedIndex)
+        
+        model.activeClipCount -= 1
+        print("active clips: \(model.activeClipCount)")
+        
+        let targetCellIndex = model.focusedIndex >= model.activeClipCount ? model.activeClipCount - 1 : model.focusedIndex
+        
+        model.operations!.reassignIndices(startingAt: targetCellIndex)
+        
+//        model.collectionView!.deleteItems(at: [model.cellAttributes[model.activeClipCount - 1].indexPath!])
+//        print("THE INDEX PATH SAYS: \(model.cellAttributes[model.activeClipCount - 1].indexPath!)")
+
+        
+        if model.activeClipCount > 0 {
+            _ = model.operations!.cellUpdateDetected(index: targetCellIndex)
+            model.collectionView?.jumpToLeftEndOfCell(index: targetCellIndex)
+
+            redrawCells(resize: true, recenter: true)
+            model.collectionView!.layout.invalidateLayout()
+        }
+        
+        model.collectionView!.reloadData()
     }
 }
     

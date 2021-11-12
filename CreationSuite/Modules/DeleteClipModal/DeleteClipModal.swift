@@ -43,8 +43,12 @@ class DeleteClipModal: UIView {
     // MARK: - Operations
     
     @objc fileprivate func closeModalWithDeleteClip() {
+        if model.canDelete
+        {
+        model.canDelete = false
         model.operations!.deleteClip()
         animateOut()
+        }
     }
     
     @objc fileprivate func closeModalWithoutDeleteClip() {

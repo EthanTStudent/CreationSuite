@@ -17,7 +17,7 @@ extension DataModelOperations {
     func tellCellToDisplayTrimHandles(index: Int){
         let dLeft = model.cellAttributes[index].trimHandleDistanceFromLeftBoundary
         let dRight = model.cellAttributes[index].trimHandleDistanceFromRightBoundary
-        model.cellAttributes[index].collectionViewCell!.displayTrimHandles(distanceFromLeftBoundary: dLeft, distanceFromRightBoundary: dRight)
+//        model.cellAttributes[index].collectionViewCell!.displayTrimHandles(distanceFromLeftBoundary: dLeft, distanceFromRightBoundary: dRight)
     }
     
     func tellCellToHideTrimHandles(index: Int){

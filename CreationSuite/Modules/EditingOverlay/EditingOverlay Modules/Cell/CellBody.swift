@@ -52,6 +52,10 @@ class CellBody: UIImageView {
         } else {
             targetNum = Int(unfocusedCellWidth! / CGFloat(unfocusedThumbnailWidth!))
         }
+        if targetNum == 0
+        {
+            targetNum = 1;
+        }
         return targetNum
     }
     

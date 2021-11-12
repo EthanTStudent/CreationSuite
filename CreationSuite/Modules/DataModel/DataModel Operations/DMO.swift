@@ -37,7 +37,7 @@ class DataModelOperations: NSObject {
             var newClipModel: VideoClipModel?
             let downloadToFileName = FileManager.default.urls(for: .documentDirectory,
                                                               in: .userDomainMask)[0]
-                .appendingPathComponent("_\(index).mov")
+                .appendingPathComponent("_\(source).mov")
             newClipModel = VideoClipModel(videoClip: nil, AWSURL: source, localURL: downloadToFileName, clipLengthInSeconds: nil)
             print("this first one should be 0:", self.model.videoClipAttributes.count)
             self.model.videoClipAttributes.append(newClipModel!)
@@ -140,21 +140,23 @@ class DataModelOperations: NSObject {
     }
     
     func reassignIndices(startingAt: Int) {
-        for i in startingAt..<model.cellAttributes.count {
-            model.cellAttributes[i].indexPath!.row = i
+        for i in 0..<startingAt{
+            print("HEY!", i)
+            model.cellAttributes[i].indexPath?.row -= 1
+            model.cellAttributes[i].collectionViewCell!.cellIndex! -= 1
         }
     }
     
-    func getUnremovedIndexFromAgnosticInt(agnosticIndex: Int) -> Int {
-        var index = -1
-        var count = 0
-        while count != agnosticIndex {
-            if !model.cellAttributes[index].isRemoved {
-                count += 1
-            }
-            index += 1
-        }
-        return index
-    }
+//    func getUnremovedIndexFromAgnosticInt(agnosticIndex: Int) -> Int {
+//        var index = 0
+//        var count = 0
+//        while count != agnosticIndex {
+//            if !model.cellAttributes[index].isRemoved {
+//                count += 1
+//            }
+//            index += 1
+//        }
+//        return index
+//    }
 }
 
